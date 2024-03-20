@@ -1,6 +1,6 @@
 <template>
   <div
-    class="prose prose-indigo prose-img:rounded-xl prose-h2:mt-0 prose-h3:mt-0 dark:prose-invert"
+    class="prose prose-indigo prose-pre:bg-white prose-pre:text-gray-800 dark:prose-pre:text-gray-200 dark:prose-pre:bg-gray-950 prose-img:rounded-xl prose-h2:mt-0 prose-h3:mt-0 dark:prose-invert"
     v-html="markdown.render(source)" />
 </template>
 
@@ -8,7 +8,6 @@
 import { useClipboard } from "@vueuse/core";
 import MarkdownIt from "markdown-it";
 import hljs from "highlight.js";
-import "highlight.js/styles/github-dark.css";
 
 const { copy } = useClipboard();
 

@@ -1,25 +1,22 @@
 <template>
-  <div>
-    <div class="py-3">
-      <UAlert
-        class="my-3 text-red-500"
-        :color="sensitive ? 'orange' : 'white'">
-        <template #description>
-          <div v-if="sensitive">
-            您的话题中包含不允许的敏感词 <b>{{ words }}</b>
-            <p>
-              若继续发布含有敏感词的信息，我们将不得不采取账户封禁措施。感谢您的理解与合作。
-            </p>
-          </div>
-          <div v-else>
-            在发布新话题时，若发现包含不符合规定的敏感词，系统将提示进行修改。若用户采取其他方式发布含有敏感词的话题，账户将面临封禁处理。
-          </div>
-        </template>
-      </UAlert>
-    </div>
+  <div class="space-y-5">
+    <UAlert
+      :color="sensitive ? 'orange' : 'white'">
+      <template #description>
+        <div v-if="sensitive">
+          您的话题中包含不允许的敏感词 <b>{{ words }}</b>
+          <p>
+            若继续发布含有敏感词的信息，我们将不得不采取账户封禁措施。感谢您的理解与合作。
+          </p>
+        </div>
+        <div v-else>
+          在发布新话题时，若发现包含不符合规定的敏感词，系统将提示进行修改。若用户采取其他方式发布含有敏感词的话题，账户将面临封禁处理。
+        </div>
+      </template>
+    </UAlert>
 
-    <form @submit.prevent="onSubmit">
-      <div class="ring-2 ring-primary rounded-lg">
+    <form @submit.prevent="onSubmit" class="space-y-5">
+      <div class="ring-2 ring-primary bg-white dark:bg-gray-950 rounded-lg">
         <UTextarea
           variant="none"
           size="lg"
@@ -77,7 +74,7 @@
         </div>
       </div>
 
-      <div class="my-5 space-y-5">
+      <div class="space-y-5">
         <div class="flex items-center space-x-5">
           <div>
             <div class="text-sm font-medium">启用评论功能</div>
