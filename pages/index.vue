@@ -30,7 +30,7 @@
           v-model="content"
           placeholder="最近有什么新鲜事要和大家分享？" />
 
-        <div class="flex items-center justify-between px-3 py-1">
+        <div class="flex items-center justify-between px-3 py-1 h-10">
           <div class="flex items-center space-x-5">
             <Icon
               name="lucide:smile-plus"
@@ -46,6 +46,7 @@
 
             <UButton
               variant="ghost"
+              class="w-8"
               :disabled="
                 publish ||
                 !content ||

@@ -10,6 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@iconify-json/lucide": "^1.1.175",
+    "@iconify-json/ri": "^1.1.20",
+    "@iconify-json/svg-spinners": "^1.1.2",
     "@nuxt/ui": "^2.14.2",
     "highlight.js": "^11.9.0",
     "markdown-it": "^14.1.0",

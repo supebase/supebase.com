@@ -13,6 +13,9 @@ export default defineNuxtConfig({
     redirect: false,
   },
   css: ["@/assets/app.css"],
+  ui: {
+    icons: ["ri", "lucide", "svg-spinners"],
+  },
   app: {
     keepalive: true,
     head: {
