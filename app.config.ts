@@ -13,7 +13,7 @@ export default defineAppConfig({
       rounded: "rounded-full",
       variant: {
         ghost:
-          "text-{color}-500 dark:text-{color}-400 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400",
+          "text-{color}-500 dark:text-{color}-400 disabled:bg-transparent dark:disabled:bg-transparent focus-visible:ring-0 focus-visible:ring-inset focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400",
       },
     },
 
@@ -24,6 +24,10 @@ export default defineAppConfig({
 
     divider: {
       label: "text-sm text-gray-300 dark:text-gray-700",
+    },
+
+    toggle: {
+      ring: "focus-visible:ring-0 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-0 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900",
     },
   },
 });
