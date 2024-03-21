@@ -36,6 +36,8 @@
             <Image @onInsert="handleImageInsert" />
           </div>
           <div class="flex items-center space-x-5">
+            <MarkdownInfo />
+
             <div class="text-sm font-medium text-gray-500">
               {{ /^[\s\n]*$/.test(content) ? 0 : content.length }} / {{ limit }}
             </div>
@@ -114,7 +116,7 @@
 <script lang="ts" setup>
 const supabase = useSupabaseClient();
 
-const limit = ref(500);
+const limit = ref(1000);
 const content = ref("");
 const allowComment = ref(true);
 const allowCommentNotify = ref(false);

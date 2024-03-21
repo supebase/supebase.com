@@ -2,12 +2,12 @@
   <div class="flex items-center justify-between h-16">
     <Icon
       name="lucide:radius"
-      class="w-auto h-9 text-primary" />
+      class="w-auto h-8 text-primary" />
 
     <div class="flex items-center justify-between space-x-4">
       <div
         @click="toggleDark()"
-        class="cursor-pointer">
+        class="cursor-pointer text-gray-500">
         <Icon
           name="line-md:sunny-filled-loop-to-moon-filled-transition"
           class="w-auto h-6"
@@ -19,9 +19,13 @@
       </div>
 
       <div>
-        <Icon
-          name="ri:github-fill"
-          class="w-auto h-6" />
+        <UButton color="black" label="登录">
+          <template #leading>
+            <Icon
+              name="ri:github-fill"
+              class="w-auto h-5" />
+          </template>
+        </UButton>
       </div>
     </div>
   </div>
