@@ -20,7 +20,7 @@
 
       <div>
         <Icon
-          name="mdi:github"
+          name="ri:github-fill"
           class="w-auto h-6" />
       </div>
     </div>

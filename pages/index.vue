@@ -1,7 +1,6 @@
 <template>
   <div class="space-y-5">
-    <UAlert
-      :color="sensitive ? 'orange' : 'white'">
+    <UAlert :color="sensitive ? 'orange' : 'white'">
       <template #description>
         <div v-if="sensitive">
           您的话题中包含不允许的敏感词 <b>{{ words }}</b>
@@ -15,8 +14,11 @@
       </template>
     </UAlert>
 
-    <form @submit.prevent="onSubmit" class="space-y-5">
-      <div class="ring-2 ring-primary bg-white dark:bg-gray-950 rounded-lg">
+    <form
+      @submit.prevent="onSubmit"
+      class="space-y-5">
+      <div
+        class="ring-1 ring-gray-200 dark:ring-gray-800 focus:outline-none focus-within:ring-2 focus-within:ring-primary dark:focus:outline-none dark:focus-within:ring-2 dark:focus-within:ring-primary bg-white dark:bg-gray-950 rounded-lg">
         <UTextarea
           variant="none"
           size="lg"
@@ -29,12 +31,9 @@
 
         <div class="flex items-center justify-between px-3 py-1 h-10">
           <div class="flex items-center space-x-5">
-            <Icon
-              name="lucide:smile-plus"
-              class="w-auto h-5 text-gray-500" />
-            <Icon
-              name="lucide:image-plus"
-              class="w-auto h-5 text-gray-500" />
+            <Emoji @onSelect="handleEmojiPickup" />
+
+            <Image @onInsert="handleImageInsert" />
           </div>
           <div class="flex items-center space-x-5">
             <div class="text-sm font-medium text-gray-500">
@@ -53,7 +52,7 @@
               type="submit">
               <template #leading>
                 <Icon
-                  name="svg-spinners:90-ring-with-bg"
+                  name="line-md:loading-twotone-loop"
                   class="w-auto h-5"
                   v-if="publish" />
 
@@ -76,7 +75,7 @@
 
       <div class="space-y-5">
         <div class="flex items-center space-x-5">
-          <div>
+          <div class="space-y-1">
             <div class="text-sm font-medium">启用评论功能</div>
             <div class="text-sm text-gray-500">
               若您希望禁止其他用户在您的话题下发表评论，请选择关闭此功能。
@@ -86,7 +85,7 @@
         </div>
 
         <div class="flex items-center space-x-5">
-          <div>
+          <div class="space-y-1">
             <div class="text-sm font-medium">启用评论提醒</div>
             <div class="text-sm text-gray-500">
               当您的话题收到来自其他用户的评论时，系统将自动发送消息通知您。
@@ -164,5 +163,13 @@ const onSubmit = async () => {
     allowComment.value = true;
     allowCommentNotify.value = false;
   }, 3000);
+};
+
+const handleEmojiPickup = (emoji: any) => {
+  content.value = emoji;
+};
+
+const handleImageInsert = (url: string) => {
+  content.value = url;
 };
 </script>
