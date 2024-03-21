@@ -1,41 +1,44 @@
 <template>
   <div class="h-5">
-  <UPopover>
-    <Icon
-      name="lucide:smile-plus"
-      class="w-auto h-5 text-gray-500 cursor-pointer" />
+    <UPopover v-model:open="emoji">
+      <Icon
+        name="lucide:smile-plus"
+        class="w-auto h-5 text-gray-500 cursor-pointer" />
 
-    <!-- Content -->
-    <template #panel>
-      <div
-        class="emoji-container"
-        @click.stop>
-        <!-- Emojis -->
-        <div class="emoji-grid">
-          <a
-            v-for="(item, index) in filtered"
-            :key="index"
-            @click.prevent="select(item.emoji)"
-            class="emoji">
-            {{ item.emoji }}
-          </a>
-        </div>
+      <!-- Content -->
+      <template #panel>
+        <div
+          class="emoji-container"
+          @click.stop>
+          <!-- Emojis -->
+          <div class="emoji-grid">
+            <a
+              v-for="(item, index) in filtered"
+              :key="index"
+              @click.prevent="
+                select(item.emoji);
+                emoji = false;
+              "
+              class="emoji">
+              {{ item.emoji }}
+            </a>
+          </div>
 
-        <!-- Category Buttons -->
-        <div class="emoji-button p-1">
-          <!-- Other Categories -->
-          <div
-            v-for="(item, index) in emojis"
-            :key="index"
-            @click="changeGroup(String(index))"
-            :class="{ 'active-group': activeGroup === index }">
-            {{ item[0].emoji }}
+          <!-- Category Buttons -->
+          <div class="emoji-button p-1">
+            <!-- Other Categories -->
+            <div
+              v-for="(item, index) in emojis"
+              :key="index"
+              @click="changeGroup(String(index))"
+              :class="{ 'active-group': activeGroup === index }">
+              {{ item[0].emoji }}
+            </div>
           </div>
         </div>
-      </div>
-    </template>
-  </UPopover>
-</div>
+      </template>
+    </UPopover>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -55,6 +58,7 @@ interface Emojis {
 }
 
 const emits = defineEmits(["onSelect"]);
+const emoji = ref(false);
 const filter = ref("");
 const emojis = ref<Emojis>(EmojisList);
 const activeGroup = ref("Smileys & People");
@@ -126,7 +130,9 @@ function changeGroup(value: string) {
  */
 function select(item: any) {
   // 获取当前文本框中的内容
-  const input = document.querySelector('textarea') as unknown as HTMLTextAreaElement;
+  const input = document.querySelector(
+    "textarea"
+  ) as unknown as HTMLTextAreaElement;
   const text = input.value;
 
   // 获取光标的位置
@@ -134,7 +140,8 @@ function select(item: any) {
   const selectionEnd = input.selectionEnd;
 
   // 插入表情符号
-  const newText = text.substring(0, selectionStart) + item + text.substring(selectionEnd);
+  const newText =
+    text.substring(0, selectionStart) + item + text.substring(selectionEnd);
   input.value = newText;
 
   // 将光标移动到表情符号后面
@@ -143,6 +150,7 @@ function select(item: any) {
 
   // emit the emoji
   emits("onSelect", newText);
+  input.focus();
 
   // add the emoji into recently used cookie
   const recentEmojisCookie = useCookie("recentEmojis", { default: () => "" });
