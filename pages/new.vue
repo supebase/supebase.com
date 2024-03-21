@@ -164,6 +164,8 @@ const onSubmit = async () => {
     content.value = "";
     allowComment.value = true;
     allowCommentNotify.value = false;
+
+    navigateTo("/");
   }, 3000);
 };
 
