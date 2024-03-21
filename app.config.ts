@@ -29,5 +29,13 @@ export default defineAppConfig({
     toggle: {
       ring: "focus-visible:ring-0 focus-visible:ring-{color}-500 dark:focus-visible:ring-{color}-400 focus-visible:ring-offset-0 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900",
     },
+
+    modal: {
+      container:
+        "flex max-w-sm mx-auto min-h-full items-center justify-center text-center",
+      overlay: {
+        base: "fixed inset-0 transition-opacity radial backdrop-blur",
+      },
+    },
   },
 });

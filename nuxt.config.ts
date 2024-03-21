@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: false,
-  modules: ["@nuxt/ui", "@nuxtjs/supabase", "@vueuse/nuxt"],
+  modules: ["@nuxt/ui", "@nuxtjs/supabase", "@vueuse/nuxt", "@pinia/nuxt"],
   colorMode: {
     preference: "dark",
     classSuffix: "",

@@ -1,6 +1,8 @@
 <template>
   <div class="h-5">
-    <UPopover v-model:open="image">
+    <UPopover
+      v-model:open="image"
+      :popper="{ offsetDistance: 15, placement: 'bottom-start' }">
       <Icon
         name="lucide:image-plus"
         class="w-auto h-5 text-gray-500 cursor-pointer" />

@@ -1,6 +1,8 @@
 <template>
   <div class="h-5">
-    <UPopover v-model:open="emoji">
+    <UPopover
+      v-model:open="emoji"
+      :popper="{ offsetDistance: 15, placement: 'bottom-start' }">
       <Icon
         name="lucide:smile-plus"
         class="w-auto h-5 text-gray-500 cursor-pointer" />

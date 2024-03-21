@@ -44,6 +44,104 @@ body {
   transform: translateY(10px);
 }
 
+.auth-move,
+.auth-enter-active,
+.auth-leave-active {
+  transition: all 0.5s ease;
+}
+
+.auth-enter-from,
+.auth-leave-to {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.auth-leave-active {
+  position: absolute;
+}
+
+.status-move,
+.status-enter-active,
+.status-leave-active {
+  transition: all 0.5s ease;
+}
+
+.status-enter-from,
+.status-leave-to {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+.status-leave-active {
+  position: absolute;
+}
+
+.like-enter-active,
+.like-leave-active {
+  transition: all 0.3s ease-in;
+}
+
+.like-enter,
+.like-leave {
+  transform: translateY(0);
+}
+
+.like-enter-to,
+.like-leave-to {
+  transform: translateY(-16px);
+}
+
+.unlike-enter-active,
+.unlike-leave-active {
+  transition: all 0.3s ease-in;
+}
+
+.unlike-enter-from {
+  transform: translateY(-32px);
+}
+
+.unlike-enter-to {
+  transform: translateY(-16px);
+}
+
+.unlike-leave {
+  transform: translateY(0);
+}
+
+.unlike-leave-to {
+  transform: translateY(16px);
+}
+
+.zoom-enter-active,
+.zoom-leave-active {
+  animation: buttonAnimation 0.3s ease forwards;
+}
+
+.zoom-enter,
+.zoom-leave-to {
+  transform: scale(0.6);
+}
+
+.zoom-enter-to,
+.zoom-leave {
+  transform: scale(1);
+}
+
+@keyframes buttonAnimation {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
 .code-block {
   position: relative;
   .code-label {
