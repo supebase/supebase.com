@@ -2,7 +2,13 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: false,
-  modules: ["@nuxt/ui", "@nuxtjs/supabase", "@vueuse/nuxt", "@pinia/nuxt"],
+  modules: [
+    "@nuxt/ui",
+    "@nuxtjs/supabase",
+    "@vueuse/nuxt",
+    "@pinia/nuxt",
+    "@nuxtjs/i18n",
+  ],
   colorMode: {
     preference: "dark",
     classSuffix: "",
@@ -31,5 +37,17 @@ export default defineNuxtConfig({
         },
       ],
     },
+  },
+  runtimeConfig: {
+    public: {
+      appName: "分享互联网",
+      appAuthor: "Eric",
+      userAgentApi:
+        "https://token.ip.api.useragentinfo.com/json?token=ab28a017dc0b7536f452fd951aed51d2",
+    },
+  },
+  i18n: {
+    vueI18n: "./i18n.config.ts",
+    defaultLocale: "zhCN",
   },
 });

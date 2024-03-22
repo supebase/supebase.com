@@ -37,5 +37,9 @@ export default defineAppConfig({
         base: "fixed inset-0 transition-opacity radial backdrop-blur",
       },
     },
+
+    avatarGroup: {
+      ring: "ring-2 ring-gray-100 dark:ring-gray-900",
+    },
   },
 });
