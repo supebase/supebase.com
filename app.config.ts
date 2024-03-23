@@ -38,6 +38,10 @@ export default defineAppConfig({
       },
     },
 
+    avatar: {
+      background: "bg-gray-200 dark:bg-gray-800",
+    },
+
     avatarGroup: {
       ring: "ring-2 ring-gray-100 dark:ring-gray-900",
     },
