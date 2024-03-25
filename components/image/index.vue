@@ -10,6 +10,7 @@
         <div class="flex items-center gap-2 p-2 bg-white dark:bg-gray-950">
           <UInput
             v-model="url"
+            autofocus
             placeholder="图片地址">
             <template #leading>
               <Icon

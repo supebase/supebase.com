@@ -4,6 +4,12 @@ export default defineI18nConfig(() => ({
   messages: {
     zhCN: {
       common: {
+        header: {
+          login: "登录",
+          confirm: "确定",
+          cancel: "取消",
+          write: "撰写"
+        },
         timeAgo: {
           "just-now": "刚刚",
           ago: "{0}前",

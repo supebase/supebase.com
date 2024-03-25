@@ -32,7 +32,7 @@
           <div v-if="!store.isAuth">
             <UButton
               color="black"
-              label="登录"
+              :label="$t('common.header.login')"
               @click="store.isAuth = true">
               <template #leading>
                 <Icon
@@ -45,7 +45,7 @@
           <div v-else-if="$route.name !== 'new'">
             <UButton
               color="lime"
-              label="撰写"
+              :label="$t('common.header.write')"
               to="/new">
               <template #leading>
                 <Icon
@@ -58,7 +58,7 @@
           <div v-else>
             <UButton
               color="amber"
-              label="取消"
+              :label="$t('common.header.cancel')"
               @click="$router.back()">
               <template #leading>
                 <Icon
@@ -92,13 +92,13 @@
 
       <div class="flex justify-end gap-4">
         <UButton
-          label="取消"
+          :label="$t('common.header.cancel')"
           color="black"
           class="px-4"
           @click="isLeave = false" />
 
         <UButton
-          label="确定"
+          :label="$t('common.header.confirm')"
           color="red"
           class="px-4"
           @click="logOut" />

@@ -38,7 +38,7 @@
           <div class="flex items-center space-x-5">
             <MarkdownInfo />
 
-            <div class="text-sm font-medium text-gray-500">
+            <div class="text-sm font-medium text-gray-500 w-20 text-center">
               {{ /^[\s\n]*$/.test(content) ? 0 : content.length }} / {{ limit }}
             </div>
 
