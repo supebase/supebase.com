@@ -75,7 +75,7 @@
         </div>
       </div>
 
-      <div class="space-y-5">
+      <!-- <div class="space-y-5">
         <div class="flex items-center space-x-5">
           <div class="space-y-1">
             <div class="text-sm font-medium">启用评论功能</div>
@@ -95,7 +95,7 @@
           </div>
           <UToggle v-model="allowCommentNotify" />
         </div>
-      </div>
+      </div> -->
 
       <UDivider
         label="预览"
