@@ -34,6 +34,8 @@
             <Emoji @onSelect="handleEmojiPickup" />
 
             <Image @onInsert="handleImageInsert" />
+
+            <Links @onInsert="handleLinkInsert" />
           </div>
           <div class="flex items-center space-x-5">
             <MarkdownInfo />
@@ -174,6 +176,10 @@ const handleEmojiPickup = (emoji: any) => {
 };
 
 const handleImageInsert = (url: string) => {
+  content.value = url;
+};
+
+const handleLinkInsert = (url: string) => {
   content.value = url;
 };
 </script>

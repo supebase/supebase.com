@@ -121,5 +121,7 @@ const isLeave = ref(false);
 const logOut = () => {
   store.isAuth = false;
   isLeave.value = false;
+
+  navigateTo("/");
 };
 </script>
