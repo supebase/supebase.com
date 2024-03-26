@@ -29,7 +29,7 @@
           v-model="content"
           placeholder="最近有什么新鲜事要和大家分享？" />
 
-        <div class="flex items-center justify-between px-3 py-1 h-10">
+        <div class="flex items-center justify-between px-3 py-1">
           <div class="flex items-center space-x-5">
             <Emoji @onSelect="handleEmojiPickup" />
 
@@ -38,9 +38,7 @@
             <Links @onInsert="handleLinkInsert" />
           </div>
           <div class="flex items-center space-x-5">
-            <MarkdownInfo />
-
-            <div class="text-sm font-medium text-gray-500 w-20 text-center">
+            <div class="text-sm font-medium text-gray-500 text-center">
               {{ /^[\s\n]*$/.test(content) ? 0 : content.length }} / {{ limit }}
             </div>
 
