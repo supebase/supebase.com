@@ -5,11 +5,8 @@
 </template>
 
 <script setup>
-import { useClipboard } from "@vueuse/core";
 import MarkdownIt from "markdown-it";
 import hljs from "highlight.js";
-
-const { copy } = useClipboard();
 
 const markdown = new MarkdownIt({
   typographer: true,
@@ -19,9 +16,7 @@ const markdown = new MarkdownIt({
     if (lang && hljs.getLanguage(lang)) {
       try {
         return (
-          `<pre class='code-block cursor-pointer' @click='${copy(
-            str
-          )}'><code>` +
+          `<pre class='code-block'><code>` +
           hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
           "</code><span class='code-label'>" +
           lang +

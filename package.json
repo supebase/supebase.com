@@ -10,8 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@iconify-json/line-md": "^1.1.36",
-    "@iconify-json/lucide": "^1.1.175",
+    "@iconify-json/line-md": "^1.1.37",
+    "@iconify-json/lucide": "^1.1.178",
     "@iconify-json/ri": "^1.1.20",
     "@nuxt/ui": "^2.14.2",
     "@pinia/nuxt": "^0.5.1",
