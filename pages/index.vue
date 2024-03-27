@@ -80,7 +80,7 @@
             class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
             John Carter
           </div>
-          <div>
+          <ULink to="/post/1">
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
               Find more detailed insctructions here. It reads the value from
               localStorage/sessionStorage (the key is configurable) to see if
@@ -93,13 +93,15 @@
                 src="https://images.unsplash.com/photo-1633114128174-2f8aa49759b0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80"
                 alt="Image Description" />
             </div>
-          </div>
+          </ULink>
           <div class="flex items-center justify-between mt-4">
-            <div class="flex items-center">
+            <ULink
+              to="/post/1"
+              class="flex items-center">
               <UAvatarGroup
                 size="sm"
                 :max="4"
-                class="cursor-pointer inline-flex flex-row-reverse justify-end">
+                class="inline-flex flex-row-reverse justify-end">
                 <UAvatar
                   src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
                   alt="Image Description" />
@@ -116,7 +118,7 @@
                   src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80"
                   alt="Image Description" />
               </UAvatarGroup>
-            </div>
+            </ULink>
 
             <ActionLike />
           </div>

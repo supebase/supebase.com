@@ -8,9 +8,7 @@
     </div>
 
     <UContainer class="my-5">
-      <NuxtPage
-        :transition="{ name: 'page', mode: 'out-in' }"
-        :page-key="(route) => route.fullPath" />
+      <NuxtPage :page-key="(route) => route.fullPath" />
     </UContainer>
   </div>
 </template>
