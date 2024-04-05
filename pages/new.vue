@@ -116,6 +116,10 @@
 <script lang="ts" setup>
 const supabase = useSupabaseClient();
 
+definePageMeta({
+  middleware: "auth",
+});
+
 const limit = ref(1000);
 const content = ref("");
 const allowComment = ref(true);
