@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@iconify-json/line-md": "^1.1.37",
-    "@iconify-json/lucide": "^1.1.183",
+    "@iconify-json/lucide": "^1.1.184",
     "@iconify-json/ri": "^1.1.20",
     "@nuxt/ui": "^2.15.2",
     "@pinia/nuxt": "^0.5.1",
@@ -19,7 +19,7 @@
     "markdown-it": "^14.1.0",
     "nuxt": "^3.11.2",
     "pinia": "^2.1.7",
-    "vue": "^3.4.23",
+    "vue": "^3.4.24",
     "vue-router": "^4.3.2"
   },
   "devDependencies": {
